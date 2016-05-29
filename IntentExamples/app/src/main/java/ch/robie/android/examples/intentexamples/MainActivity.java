@@ -12,9 +12,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        sendRequestCodeExample();
+        startIntentServiceExample();
+        //sendRequestCodeExample();
         //sendBroadcastExample();
+    }
+
+    private void startIntentServiceExample(){
+        Log.d(Thread.currentThread().getName(), "Starting IntentService");
+        startService(new Intent(this, MyIntentService.class));
     }
 
     private final int reqCode = 13;
